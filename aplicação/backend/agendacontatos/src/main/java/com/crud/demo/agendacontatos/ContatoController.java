@@ -28,7 +28,7 @@ public class ContatoController {
     @GetMapping("/find/{id}")
     public ResponseEntity<Contato> getContatoById (@PathVariable("id") Long id) {
         Contato contato = contatoService.findContatoById(id);
-        return new ResponseEntity<>((contato, HttpStatus.OK);
+        return new ResponseEntity<>(contato, HttpStatus.OK);
     }
 
     @PostMapping("/add")
