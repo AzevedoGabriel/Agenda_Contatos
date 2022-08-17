@@ -1,8 +1,11 @@
 package com.crud.demo.agendacontatos.service;
 
+import com.crud.demo.agendacontatos.model.Contato;
 import com.crud.demo.agendacontatos.repository.ContatoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class ContatoService {
@@ -12,4 +15,25 @@ public class ContatoService {
     public ContatoService(ContatoRepository contatoRepository) {
         this.contatoRepository = contatoRepository;
     }
+
+    public Contato addContato(Contato contato) {
+        return contatoRepository.save(contato);
+    }
+
+    public List<Contato> findAllContatos() {
+        return contatoRepository.findAll();
+    }
+
+    public Contato updateContato(Contato contato) {
+        return contatoRepository.save(contato);
+    }
+
+    public Contato findContatoById(Long id){
+
+    }
+
+    public void deleteContato(Long id) {
+        contatoRepository.deleteContatoById(id);
+    }
+
 }
