@@ -1,5 +1,6 @@
 package com.crud.demo.agendacontatos.service;
 
+import com.crud.demo.agendacontatos.exception.UserNotFouhndException;
 import com.crud.demo.agendacontatos.model.Contato;
 import com.crud.demo.agendacontatos.repository.ContatoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,8 @@ public class ContatoService {
     }
 
     public Contato findContatoById(Long id){
-
+        return contatoRepository.findContatoById(id)
+                .orElseThrow(() -> new UserNotFouhndException("User by id " + id + " was not found!"));
     }
 
     public void deleteContato(Long id) {
