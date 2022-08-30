@@ -37,7 +37,8 @@ public class ContatoService {
     }
 
     public void deleteContato(Long id) {
-        contatoRepository.deleteContatoById(id);
+        Contato contato = this.findContatoById(id);
+        contatoRepository.delete(contato);
     }
 
 }
