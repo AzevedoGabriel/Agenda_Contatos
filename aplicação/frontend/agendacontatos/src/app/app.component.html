@@ -6,7 +6,7 @@
   <div class="collapse navbar-collapse" id="navbarColor02">
      <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-           <a class="nav-link" (click)="onOpenModal(null, 'add')">Add Cotnato <span class="sr-only">(current)</span></a>
+           <a class="nav-link" (click)="onOpenModal('add', null)">Add Cotnato <span class="sr-only">(current)</span></a>
         </li>
      </ul>
      <form class="form-inline my-2 my-lg-0">
@@ -34,8 +34,8 @@
         </ul>
         <div class="card-body">
            <div class="float-right btn-group btn-group-sm">
-              <a (click)="onOpenModal(contato, 'edit')" class="btn btn-primary tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
-              <a (click)="onOpenModal(contato, 'delete')" class="btn btn-secondary tooltips" data-placement="top" data-original-title="Delete"><i class="fa fa-times"></i></a>
+              <a (click)="onOpenModal('edit', contato)" class="btn btn-primary tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
+              <a (click)="onOpenModal('delete', contato)" class="btn btn-secondary tooltips" data-placement="top" data-original-title="Delete"><i class="fa fa-times"></i></a>
            </div>
         </div>
      </div>
@@ -43,7 +43,7 @@
 </div>
 
 <!-- Add Employee Modal -->
-<div class="modal fade" id="addEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="addContatoModalLabel" aria-hidden="true">
+<div class="modal fade" id="addContatoModal" tabindex="-1" role="dialog" aria-labelledby="addContatoModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
        <div class="modal-header">
@@ -85,11 +85,11 @@
   </div>
 
 <!-- Edit Modal -->
-<div class="modal fade" id="updateEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="contatoEditModalLabel" aria-hidden="true">
+<div class="modal fade" id="updateContatoModal" tabindex="-1" role="dialog" aria-labelledby="contatoEditModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
      <div class="modal-content">
         <div class="modal-header">
-           <h5 class="modal-title" id="updateEmployeeModalLabel">Edit Contato {{editContato?.name}}</h5>
+           <h5 class="modal-title" id="updateContatoModalLabel">Edit Contato {{editContato?.name}}</h5>
            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
            <span aria-hidden="true">&times;</span>
            </button>
@@ -129,17 +129,17 @@
 </div>
 
 <!-- Delete Modal -->
-<div class="modal fade" id="deleteEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="deleteModelLabel" aria-hidden="true">
+<div class="modal fade" id="deleteContatoModal" tabindex="-1" role="dialog" aria-labelledby="deleteModelLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
      <div class="modal-content">
         <div class="modal-header">
-           <h5 class="modal-title" id="deleteModelLabel">Delete Employee</h5>
+           <h5 class="modal-title" id="deleteModelLabel">Delete Contato</h5>
            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
            <span aria-hidden="true">&times;</span>
            </button>
         </div>
         <div class="modal-body">
-           <p>Are you sure you want to delete employee {{deleteEmployee?.name}}?</p>
+           <p>Are you sure you want to delete contato {{deleteContato?.name}}?</p>
            <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
               <button (click)="onDeleteContato(deleteContato?.id)" class="btn btn-danger" data-dismiss="modal">Yes</button>
